@@ -7,13 +7,16 @@ function setup() {
 
 function draw() {
     stroke(0);
-    strokeWeight(6);
+    strokeWeight(5);
 
-    for (let x = 0; x < windowWidth; x = x + 100;) {
-        for (let y = 0; y < windowHeight; y = y + 100) {
-
+    for (let x = 0; x < width; x = x + 100) {
+        for (let y = 0; y < height; y = y + 100) {
+            ellipse(x, y, 30, 30);
+            rect(x + 30, y, 30, 30);
+            line(x + 40, y - 20, x + 10, y + 30);
+            line(x + 40, y - 20, x + 70, y + 10);
+            rect(x + 40, y + 10, 10, 10);
         }
-
     }
 
 }
