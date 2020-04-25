@@ -16,6 +16,10 @@ function draw() {
             line(x + 40, y - 20, x + 10, y + 30);
             line(x + 40, y - 20, x + 70, y + 10);
             rect(x + 40, y + 10, 10, 10);
+
+            let angle = 0;
+            angle = angle + 5.5;
+            rotate(angle);
         }
     }
 
