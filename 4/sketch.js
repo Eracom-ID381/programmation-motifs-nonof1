@@ -3,26 +3,23 @@ function setup() {
     let canvas = createCanvas(windowWidth - navWidth, windowHeight, WEBGL);
     canvas.parent('canvas');
     background(255);
-    colorMode(HSB, 100);
-    fill(random(0, 100), random(50, 100), random(50, 100));
-    noStroke();
+    colorMode(RGB, 100);
+    stroke(1);
+    fill(51, 204, 255);
+}
 
-
-    for (let x = 0; x < width; x = x + 20) {
+function draw() {
+    rotateX(frameCount * 0.03);
+    rotateY(frameCount * 0.03);
+    for (let x = 0; x < width; x = x + 60) {
         for (let y = 0; y < height; y = y + 20) {
-            rect(x, y, random(0, 15), random(0, 15));
-            rect(x, y, random(0, 15), random(0, 15));
-            ellipse(x, y, 20, 20);
-
-            let angle = 0;
-            angle = angle + 0.07;
-            rotateX(angle);
-            rotateY(random(0, 60));
+            for (let z = 0; z < 100; z = z + 20) {
+                sphere(15);
+                translate(x, y, z);
+            }
         }
     }
 }
-
-function draw() {}
 
 function windowResized() {
     let navWidth = document.getElementById("nav").offsetWidth;
